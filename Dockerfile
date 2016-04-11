@@ -14,7 +14,7 @@ ENV MAHOUT_LOCAL true
 WORKDIR /tmp
 RUN wget http://apache.rediris.es/mahout/${MAHOUT_VERSION}/apache-mahout-distribution-${MAHOUT_VERSION}.tar.gz && \
     tar -xvzf apache-mahout-distribution-${MAHOUT_VERSION}.tar.gz && \
-    mv apache-mahout-distribution-${MAHOUT_VERSION} /usr/local/bin/mahout
+    mv apache-mahout-distribution-${MAHOUT_VERSION}/bin/mahout /usr/local/bin/mahout
 
 RUN wget http://apache.rediris.es/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz && \
     tar -xvzf hadoop-${HADOOP_VERSION}.tar.gz && \
