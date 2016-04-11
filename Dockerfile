@@ -29,5 +29,7 @@ RUN wget https://github.com/kagux/go-remote-cli/releases/download/${REMOTE_CLI_V
     && tar -jxvf linux-amd64-remote_cli.tar.bz2 \
     && mv bin/linux/amd64/remote_cli /usr/local/bin/remote_cli
 
+RUN rm -rf /tmp/*
+
 EXPOSE 9021
 CMD ["remote_cli", "--server", "--host=0.0.0.0", "--port=9021"]
