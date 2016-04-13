@@ -25,7 +25,7 @@ RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-hadoop2
     tar -xvzf spark-${SPARK_VERSION}-bin-hadoop2.6.tgz && \
     mv spark-${SPARK_VERSION}-bin-hadoop2.6 /usr/local/spark-${SPARK_VERSION}-bin-hadoop2.6
 
-ENV REMOTE_CLI_VERSION 0.0.1
+ENV REMOTE_CLI_VERSION 0.0.2
 RUN wget https://github.com/kagux/go-remote-cli/releases/download/${REMOTE_CLI_VERSION}/linux-amd64-remote_cli.tar.bz2 \
     && tar -jxvf linux-amd64-remote_cli.tar.bz2 \
     && mv bin/linux/amd64/remote_cli /usr/local/bin/remote_cli
