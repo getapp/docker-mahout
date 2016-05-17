@@ -36,5 +36,5 @@ ADD entrypoint.sh /opt/entrypoint.sh
 ADD spark/ $SPARK_HOME/
 
 EXPOSE 9021
-ENTYPOINT ["/opt/entrypoint.sh"]
+ENTRYPOINT ["/opt/entrypoint.sh"]
 CMD ["remote_cli", "--server", "--host=0.0.0.0", "--port=9021"]
