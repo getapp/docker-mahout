@@ -1,3 +1,5 @@
+#! /bin/bash
+
 set -e
 
 config=$SPARK_HOME/conf/spark-defaults.conf
