@@ -7,4 +7,4 @@ sed -i "s#__spark_driver_max_result_size__#${SPARK_DRIVER_MAX_RESULTS_SIZE:-'1g'
 sed -i "s#__spark_driver_memory__#${SPARK_DRIVER_MEMORY:-'1g'}#" $config
 sed -i "s#__spark_driver_executor_memory__#${SPARK_EXECUTOR_DRIVER_MEMORY:-'1g'}#" $config
 
-exec $@
+exec "$@"
