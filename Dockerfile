@@ -32,5 +32,9 @@ RUN wget https://github.com/kagux/go-remote-cli/releases/download/${RC_VERSION}/
 
 RUN rm -rf /tmp/*
 
+ADD entrypoint.sh /opt/entrypoint.sh
+ADD spark/ $SPARK_HOME/
+
 EXPOSE 9021
+ENTYPOINT ["/opt/entrypoint.sh"]
 CMD ["remote_cli", "--server", "--host=0.0.0.0", "--port=9021"]
