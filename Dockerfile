@@ -8,7 +8,6 @@ ENV MAHOUT_VERSION 0.11.1
 ENV SPARK_HOME /usr/local/spark-${SPARK_VERSION}-bin-hadoop2.6
 ENV HADOOP_HOME /usr/local/hadoop-${HADOOP_VERSION}
 ENV MAHOUT_HOME /usr/local/apache-mahout-distribution-${MAHOUT_VERSION}
-ENV MAHOUT_HEAPSIZE 512
 ENV MAHOUT_LOCAL true
 
 WORKDIR /tmp
