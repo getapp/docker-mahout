@@ -8,7 +8,6 @@ ENV MAHOUT_VERSION 0.11.1
 ENV SPARK_HOME /usr/local/spark-${SPARK_VERSION}-bin-hadoop2.6
 ENV HADOOP_HOME /usr/local/hadoop-${HADOOP_VERSION}
 ENV MAHOUT_HOME /usr/local/apache-mahout-distribution-${MAHOUT_VERSION}
-ENV MAHOUT_HEAPSIZE 512
 ENV MAHOUT_LOCAL true
 
 WORKDIR /tmp
@@ -25,7 +24,7 @@ RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-hadoop2
     tar -xvzf spark-${SPARK_VERSION}-bin-hadoop2.6.tgz && \
     mv spark-${SPARK_VERSION}-bin-hadoop2.6 /usr/local/spark-${SPARK_VERSION}-bin-hadoop2.6
 
-ENV RC_VERSION 0.0.6
+ENV RC_VERSION 0.0.7
 RUN wget https://github.com/kagux/go-remote-cli/releases/download/${RC_VERSION}/linux-amd64-remote_cli.tar.bz2 \
     && tar -jxvf linux-amd64-remote_cli.tar.bz2 \
     && mv bin/linux/amd64/remote_cli /usr/local/bin/remote_cli
