@@ -20,7 +20,7 @@ RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-${HADOOP_VERSION}/
     tar -xvzf hadoop-${HADOOP_VERSION}.tar.gz && \
     mv hadoop-${HADOOP_VERSION} /usr/local/hadoop-${HADOOP_VERSION}
 
-RUN wget http://www.apache.org/dyn/closer.lua/spark-${SPARK_VERSION}-bin-hadoop2.6.tgz && \
+RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-hadoop2.6.tgz && \
     tar -xvzf spark-${SPARK_VERSION}-bin-hadoop2.6.tgz && \
     mv spark-${SPARK_VERSION}-bin-hadoop2.6 /usr/local/spark-${SPARK_VERSION}-bin-hadoop2.6
 
