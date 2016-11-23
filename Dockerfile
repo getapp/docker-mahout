@@ -11,22 +11,22 @@ ENV MAHOUT_HOME /usr/local/apache-mahout-distribution-${MAHOUT_VERSION}
 ENV MAHOUT_LOCAL true
 
 WORKDIR /tmp
-RUN wget http://www-us.apache.org/dist/mahout/${MAHOUT_VERSION}/apache-mahout-distribution-${MAHOUT_VERSION}.tar.gz && \
-    tar -xvzf apache-mahout-distribution-${MAHOUT_VERSION}.tar.gz && \
+RUN wget --quiet http://www-us.apache.org/dist/mahout/${MAHOUT_VERSION}/apache-mahout-distribution-${MAHOUT_VERSION}.tar.gz && \
+    tar -xzf apache-mahout-distribution-${MAHOUT_VERSION}.tar.gz && \
     mv apache-mahout-distribution-${MAHOUT_VERSION} /usr/local/apache-mahout-distribution-${MAHOUT_VERSION} && \
     ln -sf /usr/local/apache-mahout-distribution-${MAHOUT_VERSION}/bin/mahout /usr/local/bin/mahout
 
-RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz && \
-    tar -xvzf hadoop-${HADOOP_VERSION}.tar.gz && \
+RUN wget --quiet https://archive.apache.org/dist/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz && \
+    tar -xzf hadoop-${HADOOP_VERSION}.tar.gz && \
     mv hadoop-${HADOOP_VERSION} /usr/local/hadoop-${HADOOP_VERSION}
 
-RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-hadoop2.6.tgz && \
-    tar -xvzf spark-${SPARK_VERSION}-bin-hadoop2.6.tgz && \
+RUN wget --quiet http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-hadoop2.6.tgz && \
+    tar -xzf spark-${SPARK_VERSION}-bin-hadoop2.6.tgz && \
     mv spark-${SPARK_VERSION}-bin-hadoop2.6 /usr/local/spark-${SPARK_VERSION}-bin-hadoop2.6
 
 ENV RC_VERSION 0.0.8
-RUN wget https://github.com/kagux/go-remote-cli/releases/download/${RC_VERSION}/linux-amd64-remote_cli.tar.bz2 \
-    && tar -jxvf linux-amd64-remote_cli.tar.bz2 \
+RUN wget --quiet https://github.com/kagux/go-remote-cli/releases/download/${RC_VERSION}/linux-amd64-remote_cli.tar.bz2 \
+    && tar -jvf linux-amd64-remote_cli.tar.bz2 \
     && mv bin/linux/amd64/remote_cli /usr/local/bin/remote_cli
 
 RUN rm -rf /tmp/*
