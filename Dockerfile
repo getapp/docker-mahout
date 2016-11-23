@@ -26,7 +26,7 @@ RUN wget --quiet http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin
 
 ENV RC_VERSION 0.0.8
 RUN wget --quiet https://github.com/kagux/go-remote-cli/releases/download/${RC_VERSION}/linux-amd64-remote_cli.tar.bz2 \
-    && tar -jvf linux-amd64-remote_cli.tar.bz2 \
+    && tar -jxf linux-amd64-remote_cli.tar.bz2 \
     && mv bin/linux/amd64/remote_cli /usr/local/bin/remote_cli
 
 RUN rm -rf /tmp/*
